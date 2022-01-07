@@ -16,10 +16,31 @@
   <body>
 
 
+
+
+    <div class="left-menu" id="lmenu">
+      <p>Menu Title</p>
+    </div>
+
+
+
+
+
     <div class="black-background" id="modal">
       <div class="white-background">
         <p>Login</p>
-        <button id="close">X</button>
+        <form action="login.php">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" id="email">
+            <p id="email-alert">Email is not correct</p>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" id="password">
+            <p id="password-alert">Password is not correct</p>
+          </div>
+          <button type="submit" class="btn btn-primary">전송</button>
+        </form>
+        <button id="close" class="btn btn-danger">닫기</button>
       </div>
     </div>
 
@@ -41,15 +62,109 @@
       <hr class="my-4">
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <a class="btn btn-primary btn-lg" id="login" href="#" role="button">Login</a>
+      <a class="btn btn-danger btn-lg" id="show-menu" href="#" role="button">Open Menu</a>
+      
     </div>
 
 
     <script>
-      $('#login').on('click', function(){
-        $('.black-background').fadeIn();
+
+      $('#show-menu').click(function(){
+        $('#lmenu').animate({marginLeft : '0px'});
       });
+
+    </script>
+
+
+    <script>
+
+
+
+
+
+      var 첫커피양 = 360;
+      var 마신커피양 = 0;
+
+      var 마신커피양 = 첫커피양*2/3;
+      var 마신커피양 = 마신커피양*2/3;
+      var 마신커피양 = 마신커피양+첫커피양*2/3+첫커피양;
+
+
+      console.log(마신커피양);
+
+
+
+
+
+      var 예금액 = 60000;
+      var 미래예금액 = 0;
+
+      if (예금액 < 50000) {
+        var 미래예금액 = 예금액*1.15*1.15;
+      } else if (예금액 >= 50000) {
+        var 미래예금액 = 예금액*1.2*1.2;
+      };
+
+      console.log(미래예금액);
+
+
+      $('form').on('submit', function(e) {
+        if ($('#email').val() == '') {
+          e.preventDefault();
+          이메일안내창.show();
+        };
+        if ($('#password').val() == '') {
+          e.preventDefault();
+          $('#password-alert').show();
+        }
+      });
+
+
+      if(3 < 1){
+        console.log('안녕');
+      } else {
+        console.log('반가워');
+      };
+
+
+      // if($('#test-input').val() == '안녕'){
+      // }
+      
+      // var string = 'parameter';
+      // var lastChar = string.charAt(string.length-1);
+      
+      // console.log(lastChar)
+      
+      function 삼육구게임(parameter) {
+        var parameter = parameter;
+          var lastChar = parameter.charAt(parameter.length-1);
+
+          if (lastChar == 3) {
+            console.log('clap');
+          } else {
+            console.log(parameter);
+          };
+        };
+        
+        // function 삼육구게임(parameter) {
+        //   if (parameter%9 == 0) {
+          //     console.log('clapx2');
+          //   } else if (parameter%3 == 0) {
+            //     console.log('clap');
+            //   } else {
+              //     console.log('success');
+              //   }
+              // };
+              
+      $('#login').on('click', function(){
+          $('.black-background').show();
+          $('.black-background').addClass('slide-down');
+      });
+              
+
       $('#close').on('click', function(){
-        $('.black-background').fadeOut();
+        // $('.black-background').fadeOut();
+        $('.black-background').removeClass('slide-down');
       });
       $('#products-btn').click(function(){
         $('.nav-sub').slideToggle();
@@ -70,4 +185,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
   </body>
+
 </html>
