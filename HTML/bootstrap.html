@@ -19,7 +19,10 @@
 
 
     <div class="left-menu" id="lmenu">
-      <p>Menu Title</p>
+      <div>
+        <p>Title Menu</p>
+        <button class="btn btn-danger" id="menu-close">X</button>
+      </div>
     </div>
 
 
@@ -69,106 +72,64 @@
 
     <script>
 
-      $('#show-menu').click(function(){
-        $('#lmenu').animate({marginLeft : '0px'});
+
+      // 왼쪽 메뉴창
+      $('#show-menu').on('click', function(){
+        $('.left-menu').addClass('slide-right');
       });
 
-    </script>
+      $('#menu-close').on('click', function(){
+        $('.left-menu').removeClass('slide-right');
+      });
 
 
-    <script>
-
-
-
-
-
-      var 첫커피양 = 360;
-      var 마신커피양 = 0;
-
-      var 마신커피양 = 첫커피양*2/3;
-      var 마신커피양 = 마신커피양*2/3;
-      var 마신커피양 = 마신커피양+첫커피양*2/3+첫커피양;
-
-
-      console.log(마신커피양);
-
-
-
-
-
-      var 예금액 = 60000;
-      var 미래예금액 = 0;
-
-      if (예금액 < 50000) {
-        var 미래예금액 = 예금액*1.15*1.15;
-      } else if (예금액 >= 50000) {
-        var 미래예금액 = 예금액*1.2*1.2;
-      };
-
-      console.log(미래예금액);
-
-
+      // 로그인창
       $('form').on('submit', function(e) {
-        if ($('#email').val() == '') {
-          e.preventDefault();
-          이메일안내창.show();
-        };
-        if ($('#password').val() == '') {
-          e.preventDefault();
-          $('#password-alert').show();
-        }
-      });
 
 
-      if(3 < 1){
-        console.log('안녕');
-      } else {
-        console.log('반가워');
+
+      if (false == /\S+@\S+\.\S+/.test($('#email').val())) {
+        e.preventDefault();
+        $('#email-alert').show();
       };
 
 
-      // if($('#test-input').val() == '안녕'){
-      // }
-      
-      // var string = 'parameter';
-      // var lastChar = string.charAt(string.length-1);
-      
-      // console.log(lastChar)
-      
-      function 삼육구게임(parameter) {
-        var parameter = parameter;
-          var lastChar = parameter.charAt(parameter.length-1);
 
-          if (lastChar == 3) {
-            console.log('clap');
-          } else {
-            console.log(parameter);
-          };
-        };
-        
-        // function 삼육구게임(parameter) {
-        //   if (parameter%9 == 0) {
-          //     console.log('clapx2');
-          //   } else if (parameter%3 == 0) {
-            //     console.log('clap');
-            //   } else {
-              //     console.log('success');
-              //   }
-              // };
-              
+
+        // if ($('#email').val() == '') {
+        //   e.preventDefault();
+        //   $('#email-alert').show();
+        // };
+        // if ($('#password').val() == '') {
+        //   e.preventDefault();
+        //   $('#password-alert').show();
+        // }
+      });
+
+
+        // /\S+@\S+\.\S+/.test('asddsasda@')
+
+
+
       $('#login').on('click', function(){
           $('.black-background').show();
           $('.black-background').addClass('slide-down');
+          $('#email-alert').hide();
+          $('#password-alert').hide();
       });
-              
 
+
+
+      // 상단 nav메뉴
       $('#close').on('click', function(){
-        // $('.black-background').fadeOut();
         $('.black-background').removeClass('slide-down');
       });
       $('#products-btn').click(function(){
         $('.nav-sub').slideToggle();
       });
+
+
+
     </script>
 
 

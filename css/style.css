@@ -25,12 +25,14 @@
   height: 100%;
   display: block;
   transition: all 1s;
-  transform: translateY(-1000px);
+  transform: translateY(-1100px);
 }
 
 .slide-down{
   transform: translateY(0px);
 }
+
+
 
 .white-background{
   background: white;
@@ -61,5 +63,17 @@
   background-color: black;
   color: white;
   position: fixed;
-  margin-left: -150px;
+  transform: translateX(-200px);
+  transition: all 1s;
+}
+
+.left-menu div {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.slide-right{
+  transform: translateX(0px);
 }
