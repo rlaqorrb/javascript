@@ -53,7 +53,7 @@
   display: none;
 }
 
-#email-alert, #password-alert{
+#email-alert, #password-alert, #email-alert-em{
   display: none;
 }
 
@@ -76,4 +76,17 @@
 
 .slide-right{
   transform: translateX(0px);
+}
+
+
+.slide-container{
+  width: 300vw;
+}
+
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img{
 }
