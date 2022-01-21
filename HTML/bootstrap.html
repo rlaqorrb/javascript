@@ -62,6 +62,13 @@
       <li class="list-group-item">Morbi leo risus</li>
     </ul>
 
+
+
+
+
+
+
+
   <script>
 
 
@@ -179,6 +186,59 @@
 
 
     <div style="margin-bottom: 500px;"></div>
+
+
+
+
+
+
+
+    <h4 id="p-title">상품제목</h4>
+    <p id="p-content">상품내용</p>
+    <div style="margin-bottom: 500px;"></div>
+
+
+
+<script>
+
+  var doc = [ { brand : 'BMW' }, { model : 520 } ];
+  $('#p-title').html(doc[0].brand);
+  $('#p-content').html(doc[1].model);
+
+  console.log(doc[0].brand);
+
+
+
+
+  var array = [ 'BMW', 520 ];
+  // document.getElementById('p-title').innerHTML = array[0];
+  // document.getElementById('p-content').innerHTML = array[1];
+  // $('#p-title').html(array[0]);
+  // $('#p-content').html(array[1]);
+
+  
+
+  var object = { brand : 'BMW', model :  520};
+  // document.getElementById('p-title').innerHTML = Object.values(object)[0];
+  // document.getElementById('p-content').innerHTML = Object.values(object)[1];
+  // $('#p-title').html(Object.values(object)[0]);
+  // $('#p-content').html(Object.values(object)[1]);
+  // $('#p-title').html(object.brand);
+  // $('#p-content').html(object.model);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
 
     <script>
 
