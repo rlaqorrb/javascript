@@ -144,4 +144,5 @@
 
 .size-select{
   display: block;
+  max-width: 600px;
 }
