@@ -101,7 +101,7 @@
 
 .slide-container{
   width: 300vw;
-  transition: transform 1s;
+  /* transition: transform 1s; */
   position: relative;
 }
 
@@ -145,4 +145,17 @@
 .size-select{
   display: block;
   max-width: 600px;
+}
+
+.card{
+  margin-top: 35px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky !important;
+  top: 350px;
+}
+
+.card-container{
+  height: 2000px;
 }

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,6 +18,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
 
@@ -70,6 +73,8 @@
 
 
   <script>
+
+
 
 
     $(window).on('scroll', function(){
@@ -184,18 +189,50 @@
 
     <script src="tab.js"></script>
 
+    <div style="margin-top: 200px;"></div>
 
-    <div style="margin-bottom: 500px;"></div>
-
-
-
+    <div class="card-container">
 
 
+      <div class="card" style="width: 18rem;">
+        <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
 
 
-    <h4 id="p-title">상품제목</h4>
-    <p id="p-content">상품내용</p>
-    <div style="margin-bottom: 500px;"></div>
+    </div>
+
+    <div style="padding-bottom: 1500px;"></div>
+
+
+
+
+
+
+
+
 
 
 
@@ -241,7 +278,40 @@
 
 
     <script>
+      var 이미지1 = document.querySelectorAll('.slide-box')[0];
 
+      var 매니저 = new Hammer.Manager(이미지1);
+      매니저.add(new Hammer.Pan({treshold: 0}));
+
+      매니저.on('pan', function(e){
+        console.log(e.deltaX);
+        if (e.deltaX < -1){
+
+          $('.slide-container').css('transform', 'translateX('+ e.deltaX +'px)');
+        }
+      });
+
+
+    $(window).scroll(function(){
+      var 높이 = $(window).scrollTop();
+      console.log(높이);
+
+      var y =  (-1/400) * 높이 + 13/4;
+      var w = (-1/40) * 높이 + 245/2;
+      var y2 = (-1/500) * 높이 + 19/5;
+      var w2 = (-1/50) * 높이 + 128;
+
+
+      $('.card').eq(0).css('opacity', y);
+      $('.card').eq(1).css('opacity', y2);
+      if (w <= 100){
+        $('.card').eq(0).css('transform', `scale(${w}%)`);
+      }
+      if (w2 <= 100){
+        $('.card').eq(1).css('transform', `scale(${w2}%)`);
+      }
+
+    });
 
 
 
