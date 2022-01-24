@@ -24,7 +24,8 @@
 
 
 
-
+    <div class="left-menu-background">
+    </div>
     <div class="left-menu" id="lmenu">
       <div>
         <p>Title Menu</p>
@@ -59,11 +60,11 @@
       <h4 class="large-logo">Logo</h4>
       <a id="products-btn">Products</a>
     </div>
-    <ul class="nav-sub list-group">
+    <!-- <ul class="nav-sub list-group">
       <li class="list-group-item">Cras justo odio</li>
       <li class="list-group-item">Dapibus ac facilisis in</li>
       <li class="list-group-item">Morbi leo risus</li>
-    </ul>
+    </ul> -->
 
 
 
@@ -89,9 +90,9 @@
       }
     });
 
-    $('#products-btn').on('click', function(){
-      $('.nav-sub').removeClass('nav-sub');
-    });
+    // $('#products-btn').on('click', function(){
+    //   $('.nav-sub').removeClass('nav-sub');
+    // });
 
   </script>
 
@@ -122,10 +123,12 @@
         </div>
       </div>
     </div>
+    <div class="slide-btn-container">
 
-    <button class="slide-1">1</button>
-    <button class="slide-2">2</button>
-    <button class="slide-3">3</button>
+      <button class="slide-1" style="background: black;"></button>
+      <button class="slide-2"></button>
+      <button class="slide-3"></button>
+    </div>
 
     <div class="my-5"></div>
 
@@ -194,7 +197,7 @@
     <div class="card-container">
 
 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 20%;">
         <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -203,7 +206,7 @@
         </div>
       </div>
 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 20%;">
         <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -212,7 +215,7 @@
         </div>
       </div>
 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 20%;">
         <img src="https://via.placeholder.com/200" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -277,8 +280,9 @@
 
 
 
-    <script>
-      var 이미지1 = document.querySelectorAll('.slide-box')[0];
+<script>
+  var np = 1;
+  var 이미지1 = document.querySelectorAll('.slide-box')[0];
 
       var 매니저 = new Hammer.Manager(이미지1);
       매니저.add(new Hammer.Pan({treshold: 0}));
@@ -288,6 +292,14 @@
         if (e.deltaX < -1){
 
           $('.slide-container').css('transform', 'translateX('+ e.deltaX +'px)');
+          if (e.isFinal && np == 1){
+            $('.slide-container').addClass('transforming');
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            setTimeout(function(){
+              $('.slide-container').removeClass('transforming');
+            }, 500)
+
+          };
         }
       });
 
@@ -316,7 +328,6 @@
 
 
 
-      var np = 1;
 
 
       $('.next').click(function(){
@@ -332,6 +343,9 @@
           if (np < 3){
 
             $('.slide-container').css('transform', 'translateX(-' + np + '00vw)');
+            $(`.slide-${np}`).css('background', '#eee');
+            $(`.slide-${np+1}`).css('background', 'black');
+
             np = np + 1;
           };
       });
@@ -340,29 +354,49 @@
         if (np > 1){
           np = np - 2;
           $('.slide-container').css('transform', 'translateX(-' + np + '00vw)');
+          $(`.slide-${np+2}`).css('background', '#eee');
+          $(`.slide-${np+1}`).css('background', 'black');
           np = np + 1;
         };
       });
 
 
       $('.slide-1').click(function(){
-        $('.slide-container').css('transform', 'translateX(0vw)')
+        $('.slide-container').css('transform', 'translateX(0vw)');
+        $('.slide-1').css('background', 'black');
+        $('.slide-2').css('background', '#eee');
+        $('.slide-3').css('background', '#eee');
       });
       $('.slide-2').click(function(){
         $('.slide-container').css('transform', 'translateX(-100vw)');
+        $('.slide-1').css('background', '#eee');
+        $('.slide-2').css('background', 'black');
+        $('.slide-3').css('background', '#eee');
+
       });
       $('.slide-3').click(function(){
         $('.slide-container').css('transform', 'translateX(-200vw)');
+        $('.slide-1').css('background', '#eee');
+        $('.slide-2').css('background', '#eee');
+        $('.slide-3').css('background', 'black');
+
       });
 
 
       // 왼쪽 메뉴창
       $('#show-menu').on('click', function(){
         $('.left-menu').addClass('slide-right');
+        $('.left-menu-background').fadeIn();
       });
 
       $('#menu-close').on('click', function(){
         $('.left-menu').removeClass('slide-right');
+        $('.left-menu-background').fadeOut();
+
+      });
+      $('.left-menu-background').click(function(){
+        $('.left-menu').removeClass('slide-right');
+        $('.left-menu-background').fadeOut();
       });
 
 
