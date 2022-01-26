@@ -1,0 +1,16 @@
+body{
+  background: black !important;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.container{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.hw{
+  color: rgb(19, 233, 0);
+  margin-bottom: -10px;
+}
