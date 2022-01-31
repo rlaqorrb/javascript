@@ -1,0 +1,13 @@
+.login-modal{
+  border: 1px solid black;
+  width: 70%;
+  margin: auto;
+  display: none;
+
+  transition: all .1s;
+
+}
+
+.btn-danger{
+  float: right;
+}
