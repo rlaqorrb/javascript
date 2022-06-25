@@ -1,34 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <title>Document</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <script src="https://kit.fontawesome.com/6e4abe1f96.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/weather-icons.min.css">
 </head>
+
 <body>
-  
-  <p class="greeting">안녕하세여</p>
-  <p class="greeting">안녕하세여</p>
-  <p class="greeting">안녕하세여</p>
-
-  <button class="btn"></button>
-  <button class="btn"></button>
-  <button class="btn"></button>
 
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script>
+
+
+  <div class="container">
 
     
 
 
+    <div class="nav-container">
+      <div class="navbar">
+        <h4 class="title">VS page</h4>
+        <div class="nav-left">
+          <div class="time">
+            <span id="emot">⏱️</span><span id="time">00:00:00</span>
+            <!-- <button class="sub-menu-btn" id="side-menu"><i class="fa-solid fa-bars"></i></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- side menu -->
+    
+    <div class="side-navbar">
+      <div style="padding: 1px;"></div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Home</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-house"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Service</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-headphones"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Alert</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Stats</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a id="login">
+          <p>Login</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </div>
+        </a>
+      </div>
+    </div>
 
-    // $('.btn').on('click', function(){
 
-    // });
-    // $('.greeting').html('안녕');
+    <!-- <div class="side-menu-container">
+      <div class="side-menu">
+        <div class="side-menu-header">
+          <h4>JS Shop</h4>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- login modal -->
+    <div class="login-modal-black-bg">
+      <div class="login-modal">
+        <div class="login-modal-container">
+          <h4 class="login-modal-title">로그인하세요</h4>
+          <form action="" class="login-form">
+            <input type="text" placeholder="ID">
+            <input type="text" placeholder="PW">
+            <p class="register"><a href="">계정이 없으신가요?</a></p>
+            <button class="blue" type="submit">로그인</button>
+            <button class="red" type="button" id="close">닫기</button>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="contents">
+      <div class="weather-container">
+        <div class="weather">
+          <!-- <p id="weather">오늘의 날씨</p> -->
+          <div class="weather-top">
+            <p class="w-ico"></p>
+            <p class="tmp"></p>
+          </div>
+          <p class="sky">날씨로딩중</p>
+          <p class="location">위치로딩중</p>
+          <p>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="w-search" class="w-search" placeholder="도시 검색">
+          </p>
+          <div class="weather-bottom">
+            <p class="wsd"></p>
+            <p class="reh"></p>
+            <p class="pop"></p>
+          </div>
+          <!-- <p class="pcp">강수량</p> -->
+        </div>
+      </div>
+      <!-- header -->
+      <div class="header">
+        <div class="header-content">
+          <h1 class="header-title">Welcome to VoidString</h1>
+          <p class="header-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis deleniti nesciunt cum perspiciatis aperiam recusandae vitae et ea.</p>
+        </div>
+      </div>
+      <!-- contents -->
+      <!-- <div class="contents-container">
+        <div class="contents-grid">
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="inner-contents">
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <script>
+
+
+
+
+
+
 
   </script>
+  
+
+  <!-- sideMenu.js 현재 사용하지 않음 -->
+  <script src="../JS/sideMenu.js"></script>
+  <script src="../JS/login.js"></script>
+  <script src="../JS/time.js"></script>
+  <script src="../JS/weather.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>
