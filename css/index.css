@@ -10,11 +10,16 @@ div {
   font-family: "Montserrat";
   src: url(../FONT/MontserratAlternates-Regular.otf);
 }
+@font-face {
+  font-family: "Basic Font";
+  src: url(font/NanumSquareB.woff);
+}
 .container {
   background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-family: "Basic Font";
 }
 .container .side-navbar {
   position: fixed;
@@ -281,6 +286,7 @@ div {
 .container .weather-container .weather .weather-top .sky {
   font-size: 50px;
   margin-right: 10px;
+  margin: 10px inherit;
 }
 .container .weather-container .weather .weather-top .w-ico {
   font-size: 50px;
@@ -291,6 +297,7 @@ div {
 }
 .container .weather-container .weather .location {
   font-size: 20px;
+  margin: 10px auto;
 }
 .container .weather-container .weather .w-search {
   border: none;
