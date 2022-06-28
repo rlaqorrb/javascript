@@ -22,22 +22,19 @@
 
   <div class="container">
 
-    
-
-
     <div class="nav-container">
       <div class="navbar">
         <h4 class="title">VS page</h4>
         <div class="nav-left">
           <div class="time">
             <span id="emot">⏱️</span><span id="time">00:00:00</span>
-            <!-- <button class="sub-menu-btn" id="side-menu"><i class="fa-solid fa-bars"></i></button> -->
           </div>
         </div>
       </div>
     </div>
+
+  
     <!-- side menu -->
-    
     <div class="side-navbar">
       <div style="padding: 1px;"></div>
       <div class="side-navbar-icon-container">
@@ -84,7 +81,57 @@
 
     <!-- Mobile Bottom Navbar -->
     <div class="M-navbar-container">
-      <div class="M-navbar"></div>
+      <div class="M-navbar">
+        <div class="M-navbar-button-container" id="M-slideUp">
+          <div class="M-navbar-button">
+            <div class="left-bar"></div>
+            <div class="right-bar"></div>
+            <!-- <i class="fa-solid fa-chevron-up"></i> -->
+          </div>
+        </div>
+        <div class="M-navbar-main">
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+              <i class="fa-solid fa-headphones"></i>
+              </div>
+              <p class="M-iconName">Service</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+              <i class="fa-solid fa-flag"></i>
+              </div>
+              <p class="M-iconName">Alert</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+              <i class="fa-solid fa-house"></i>
+              </div>
+              <p class="M-iconName">Home</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+              <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <p class="M-iconName">Stats</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </div>
+              <p class="M-iconName">Login</p>
+            </a>
+          </div>
+        </div>
+      </div>
 
 
     </div>
@@ -110,7 +157,6 @@
     <div class="contents">
       <div class="weather-container">
         <div class="weather">
-          <!-- <p id="weather">오늘의 날씨</p> -->
           <div class="weather-top">
             <p class="w-ico"></p>
             <p class="tmp"></p>
@@ -126,9 +172,11 @@
             <p class="reh"></p>
             <p class="pop"></p>
           </div>
-          <!-- <p class="pcp">강수량</p> -->
         </div>
       </div>
+
+
+      
       <!-- header -->
       <div class="header">
         <div class="header-content">
@@ -208,8 +256,42 @@ setInterval(function () {
   $('#time').html(hour + ":" + min + ":" + sec);
 }, 1000);
 
+  var currentTime = new Date();
+  var currentYear = String(currentTime.getFullYear());
+  var currentMonth = String(currentTime.getMonth()+1);
+  if(currentMonth.length < 2){
+    currentMonth = '0' + currentMonth;
+  }
+  var currentDate = String(currentTime.getDate());
+  if(currentDate.length < 2){
+    currentDate = '0' + currentDate;
+  }
 
+  var mealDay = currentYear + currentMonth + currentDate;
+  console.log(mealDay);
+  var apiURL =  'https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=S10&SD_SCHUL_CODE=9010333&MLSV_YMD='+mealDay;
+  $.ajax({
+    url: apiURL,
+    dataType: 'json',
+    type: 'GET',
+    async: 'false',
+    success: function(resp){
+      console.log(resp);
+      console.log(resp.mealServiceDietInfo[1].row[0]);
+      console.log('학교명 : ' +resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
+      console.log('급식 : ' +resp.mealServiceDietInfo[1].row[0].DDISH_NM);
+      console.log('급식 종류: ' +resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
+      console.log('일시 : ' +resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+    }
 
+  })
+
+  $('#M-slideUp').on('click', function(){
+    $('.M-navbar-container').toggleClass('M-slideUp');
+    $('.M-iconName').toggleClass('M-slideUp');
+    $('.left-bar').toggleClass('M-rotateL');
+    $('.right-bar').toggleClass('M-rotateR');
+  })
   </script>
   
 
