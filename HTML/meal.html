@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/weather-icons.min.css">
+  <link rel="stylesheet" href="../css/meal.css">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/6e4abe1f96.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+  <div class="container">
+
+    <div class="nav-container">
+      <div class="navbar">
+        <h4 class="title">VS page</h4>
+        <div class="nav-left">
+          <div class="time">
+            <span id="emot">⏱️</span><span id="time">00:00:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- side menu -->
+    <div class="side-navbar">
+      <div style="padding: 1px;"></div>
+      <div class="side-navbar-icon-container">
+        <a href="index.html">
+          <p>Home</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-house"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="meal.html">
+          <p>Service</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-headphones"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Alert</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a href="">
+          <p>Stats</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+        </a>
+      </div>
+      <div class="side-navbar-icon-container">
+        <a id="login">
+          <p>Login</p>
+          <div class="side-navbar-icon">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Bottom Navbar -->
+    <div class="M-navbar-container">
+      <div class="M-navbar">
+        <div class="M-navbar-button-container" id="M-slideUp">
+          <div class="M-navbar-button">
+            <div class="left-bar"></div>
+            <div class="right-bar"></div>
+            <!-- <i class="fa-solid fa-chevron-up"></i> -->
+          </div>
+        </div>
+        <div class="M-navbar-main">
+          <div class="M-bottom-navbar-icon-container">
+            <a href="meal.html">
+              <div class="M-bottom-icon">
+                <i class="fa-solid fa-headphones"></i>
+              </div>
+              <p class="M-iconName">Service</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+                <i class="fa-solid fa-flag"></i>
+              </div>
+              <p class="M-iconName">Alert</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="index.html">
+              <div class="M-bottom-icon">
+                <i class="fa-solid fa-house"></i>
+              </div>
+              <p class="M-iconName">Home</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <p class="M-iconName">Stats</p>
+            </a>
+          </div>
+          <div class="M-bottom-navbar-icon-container">
+            <a href="">
+              <div class="M-bottom-icon">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </div>
+              <p class="M-iconName">Login</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- login modal -->
+    <div class="login-modal-black-bg">
+      <div class="login-modal">
+        <div class="login-modal-container">
+          <h4 class="login-modal-title">로그인하세요</h4>
+          <form action="" class="login-form">
+            <input type="text" placeholder="ID">
+            <input type="text" placeholder="PW">
+            <p class="register"><a href="">계정이 없으신가요?</a></p>
+            <button class="blue" type="submit">로그인</button>
+            <button class="red" type="button" id="close">닫기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Content -->
+    <div class="tab-container">
+      <div class="tab">
+        <div class="tab-header">
+          <h2 class="tab-title">급식정보</h2>
+          <input value="[학교이름]" class="schNm">
+          <p class="mealScNm">[급식종류]</p>
+          <input class="mealTimeInput" type="date" value="" name="" id="">
+        </div>
+        <ul class="list">
+          <li class="tab-button orange">중식</li>
+          <li class="tab-button">석식</li>
+          <li class="tab-button">영양정보</li>
+        </ul>
+        <div class="tab-content show">
+          <p class="dishNm">현재 날짜의 급식정보가 없음</p>
+
+        </div>
+        <div class="tab-content">
+          <p>준비중입니다.</p>
+        </div>
+        <div class="tab-content">
+          <p>준비중입니다.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script>
+      
+
+      $('.tab-button').eq(0).on('click', function () {
+        $('.tab-button').removeClass('orange');
+        $('.tab-content').removeClass('show');
+        $('.tab-button').eq(0).addClass('orange');
+        $('.tab-content').eq(0).addClass('show');
+      })
+      $('.tab-button').eq(1).on('click', function () {
+        $('.tab-button').removeClass('orange');
+        $('.tab-content').removeClass('show');
+        $('.tab-button').eq(1).addClass('orange');
+        $('.tab-content').eq(1).addClass('show');
+      })
+      $('.tab-button').eq(2).on('click', function () {
+        $('.tab-button').removeClass('orange');
+        $('.tab-content').removeClass('show');
+        $('.tab-button').eq(2).addClass('orange');
+        $('.tab-content').eq(2).addClass('show');
+      })
+
+
+      var currentTime = new Date();
+      var currentYear = String(currentTime.getFullYear());
+      var currentMonth = String(currentTime.getMonth() + 1);
+      if (currentMonth.length < 2) {
+        currentMonth = '0' + currentMonth;
+      }
+      var currentDate = String(currentTime.getDate());
+      if (currentDate.length < 2) {
+        currentDate = '0' + currentDate;
+      }
+
+      var currentDateCopy = currentYear + '-' + currentMonth + '-' + currentDate;
+      $('.mealTimeInput').val(currentDateCopy);
+
+      var mealDay = currentYear + currentMonth + currentDate;
+      console.log(mealDay);
+      var apiURL = 'https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=S10&SD_SCHUL_CODE=9010333&MLSV_YMD=' + mealDay;
+      $.ajax({
+        url: apiURL,
+        dataType: 'json',
+        type: 'GET',
+        async: 'false',
+        success: function (resp) {
+          console.log(resp);
+          console.log(resp.mealServiceDietInfo[1].row[0]);
+          console.log('학교명 : ' + resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
+          $('.schNm').val(resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
+          console.log('급식 : ' + resp.mealServiceDietInfo[1].row[0].DDISH_NM);
+          $('.dishNm').html(resp.mealServiceDietInfo[1].row[0].DDISH_NM);
+          console.log('급식 종류: ' + resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
+          $('.mealScNm').html(resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
+          console.log('일시 : ' + resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+          var mealTime = String(resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+          var mealYear = mealTime.slice(0, 4);
+          var mealMonth = mealTime.slice(4, 6);
+          var mealDay = mealTime.slice(6, 8);
+          console.log(mealYear);
+          console.log(mealMonth);
+          console.log(mealDay);
+          mealTime = mealYear + '-' + mealMonth + '-' + mealDay;
+          $('.mealTimeInput').val(mealTime);
+          console.log(mealTime);
+
+          $('.mealTime').html(resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+        }
+
+      })
+      $('.mealTimeInput').on('change', function () {
+        var mealTime = $('.mealTimeInput').val();
+        console.log(mealTime);
+        var mealTimeCopy = mealTime;
+        var mealYear = mealTime.slice(0, 4);
+        var mealMonth = mealTime.slice(5, 7);
+        var mealDay = mealTime.slice(8, 10);
+        console.log(mealYear);
+        console.log(mealMonth);
+        console.log(mealDay);
+        mealTime = mealYear + mealMonth + mealDay;
+        var apiURL = 'https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=S10&SD_SCHUL_CODE=9010333&MLSV_YMD=' + mealTime;
+        
+        $.ajax({
+          url: apiURL,
+          dataType: 'json',
+          type: 'GET',
+          async: 'false',
+          success: function (resp) {
+            console.log(resp);
+            console.log(resp.mealServiceDietInfo[1].row[0]);
+            console.log('학교명 : ' + resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
+            $('.schNm').val(resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
+            console.log('급식 : ' + resp.mealServiceDietInfo[1].row[0].DDISH_NM);
+            $('.dishNm').html(resp.mealServiceDietInfo[1].row[0].DDISH_NM);
+            console.log('급식 종류: ' + resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
+            $('.mealScNm').html(resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
+            console.log('일시 : ' + resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+            var mealTime = String(resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+            $('.mealTimeInput').val(mealTimeCopy);
+            console.log(mealTime);
+
+            $('.mealTime').html(resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
+          }
+
+        })
+      })
+    </script>
+    <!-- Scripts -->
+    <script src="../JS/mobileNavbar.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/time.js"></script>
+
+
+</body>
+
+</html>

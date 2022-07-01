@@ -1,4 +1,4 @@
-body, p, h4, h1, h3, h5 {
+body, p, h4, h1, h2, h3, h5 {
   margin: 0px;
 }
 
@@ -8,7 +8,7 @@ div {
 
 @font-face {
   font-family: "Montserrat";
-  src: url(../FONT/MontserratAlternates-Regular.otf);
+  src: url(font/MontserratAlternates-Regular.otf);
 }
 @font-face {
   font-family: "Basic Font";
@@ -22,6 +22,7 @@ div {
   font-family: "Basic Font";
 }
 .container .side-navbar {
+  z-index: 1;
   position: fixed;
   top: 0;
   background: #051937;
@@ -149,6 +150,9 @@ div {
 }
 .container .side-menu-show {
   visibility: visible;
+}
+.container .M-navbar-container {
+  display: none;
 }
 .container .login-modal-black-bg {
   visibility: hidden;
@@ -525,6 +529,7 @@ div {
     font-size: 24px;
   }
   .container .M-navbar-container {
+    display: block;
     position: fixed;
     width: 100%;
     height: 50vh;

@@ -1,0 +1,113 @@
+.tab-container {
+  width: 80%;
+  height: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.tab-container .tab .tab-header {
+  border-bottom: 1px solid white;
+  color: white;
+}
+.tab-container .tab .tab-header .tab-title {
+  padding: 20px;
+  display: inline-block;
+}
+.tab-container .tab .tab-header .schNm {
+  border: none;
+  background: none;
+  color: white;
+  width: 100px;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0px 10px;
+}
+.tab-container .tab .tab-header .mealScNm {
+  display: inline-block;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 0px 10px;
+}
+.tab-container .tab .tab-header .mealTime {
+  display: inline-block;
+  padding: 0px 10px;
+}
+.tab-container .tab .tab-header .mealTimeInput {
+  padding: 0px 10px;
+  border: none;
+  background: none;
+  color: white;
+}
+.tab-container .tab .tab-header .mealTimeInput::-webkit-calendar-picker-indicator {
+  color: white;
+}
+.tab-container .tab ul.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+.tab-container .tab ul.list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.tab-container .tab .tab-button {
+  display: block;
+  padding: 10px 20px 10px 20px;
+  float: left;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tab-container .tab .orange {
+  border-bottom: 2px solid #348EFF;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  color: white;
+  margin-top: -2px;
+}
+.tab-container .tab .tab-content {
+  z-index: 2;
+  display: none;
+  padding: 10px;
+  color: white;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing: 2px;
+  line-height: 50px;
+}
+
+.show {
+  display: block !important;
+}
+
+@media screen and (max-width: 600px) {
+  .container .tab-container .tab .tab-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .container .tab-container .tab .tab-header .tab-title {
+    padding: 7px;
+    padding-top: 10px;
+    font-size: 18px;
+  }
+  .container .tab-container .tab .tab-header .schNm {
+    text-align: center;
+    padding: 7px;
+  }
+  .container .tab-container .tab .tab-header .mealScNm {
+    border: none;
+    padding: 7px;
+  }
+  .container .tab-container .tab .tab-header .mealTimeInput {
+    text-align: center;
+  }
+}/*# sourceMappingURL=meal.css.map */

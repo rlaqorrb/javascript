@@ -1,0 +1,124 @@
+.tab-container{
+  width: 80%;
+  height: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  border: 1px solid white;
+  border-radius: 20px;
+  .tab{
+    .tab-header{
+      border-bottom: 1px solid white;
+      color: invert(black);
+      .tab-title{
+        padding: 20px;
+        display: inline-block;
+      }
+      .schNm{
+        border: none;
+        background: none;
+        color: invert(black);
+        width: 100px;
+        font-size: 16px;
+        display: inline-block;
+        padding: 0px 10px;
+      }
+      .mealScNm{
+        display: inline-block;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        padding: 0px 10px;
+      }
+      .mealTime{
+        display: inline-block;
+        padding: 0px 10px;
+      }
+      .mealTimeInput{
+        padding: 0px 10px;
+        border: none;
+        background: none;
+        color: invert(black);
+      }
+      .mealTimeInput::-webkit-calendar-picker-indicator{
+        color: white;
+      }
+    }
+    ul.list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #ccc;
+    }
+    ul.list::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .tab-button {
+      display: block;
+      padding: 10px 20px 10px 20px;
+      float: left;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      color: grey;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .orange {
+      border-bottom: 2px solid #348EFF;
+      border-right: 1px solid #ccc;
+      // border-top: 1px solid white;
+      border-left: 1px solid #ccc;
+      color:  invert(black);
+      margin-top: -2px;
+    }
+    .tab-content {
+      z-index: 2;
+      display: none;
+      padding: 10px;
+      color: invert(black);
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      letter-spacing: 2px;
+      line-height: 50px;
+    }
+  }
+}
+
+.show {
+  display: block !important;
+}
+
+
+@media screen and (max-width : 600px) {
+  .container{
+    .tab-container{
+      .tab{
+        .tab-header{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          .tab-title{
+            padding: 7px;
+            padding-top: 10px;
+            font-size: 18px;
+          }
+          .schNm{
+            text-align: center;
+            padding: 7px;
+          }
+          .mealScNm{
+            border: none;
+            padding: 7px;
+          }
+          .mealTimeInput{
+            text-align: center;
+          }
+        }
+        
+      }
+    }
+  }
+}

@@ -38,7 +38,7 @@
     <div class="side-navbar">
       <div style="padding: 1px;"></div>
       <div class="side-navbar-icon-container">
-        <a href="">
+        <a href="index.html">
           <p>Home</p>
           <div class="side-navbar-icon">
             <i class="fa-solid fa-house"></i>
@@ -46,7 +46,7 @@
         </a>
       </div>
       <div class="side-navbar-icon-container">
-        <a href="">
+        <a href="meal.html">
           <p>Service</p>
           <div class="side-navbar-icon">
             <i class="fa-solid fa-headphones"></i>
@@ -91,7 +91,7 @@
         </div>
         <div class="M-navbar-main">
           <div class="M-bottom-navbar-icon-container">
-            <a href="">
+            <a href="meal.html">
               <div class="M-bottom-icon">
               <i class="fa-solid fa-headphones"></i>
               </div>
@@ -233,69 +233,16 @@
 
 
 
-setInterval(function () {
-  var time = new Date();
-  var hour = String(time.getHours());
-  var min = String(time.getMinutes());
-  var sec = String(time.getSeconds());
-  if (hour.length < 2) {
-    hour = "0" + hour;
-  }
-  if (min.length < 2) {
-    min = "0" + min;
-  }
-  if (sec.length < 2) {
-    sec = "0" + sec;
-  }
-  if (hour <= 6 || hour >= 22) {
-    $('#emot').html('🌙');
-    $('.container').css('background-image', 'linear-gradient(to right bottom, #051937, #062140, #06284a, #053153, #03395d, #0b3d61, #124066, #18446a, #224469, #2b4368, #314367, #374366)')
-  } else {
-    $('#emot').html('☀️');
-  }
-  $('#time').html(hour + ":" + min + ":" + sec);
-}, 1000);
 
-  var currentTime = new Date();
-  var currentYear = String(currentTime.getFullYear());
-  var currentMonth = String(currentTime.getMonth()+1);
-  if(currentMonth.length < 2){
-    currentMonth = '0' + currentMonth;
-  }
-  var currentDate = String(currentTime.getDate());
-  if(currentDate.length < 2){
-    currentDate = '0' + currentDate;
-  }
 
-  var mealDay = currentYear + currentMonth + currentDate;
-  console.log(mealDay);
-  var apiURL =  'https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=S10&SD_SCHUL_CODE=9010333&MLSV_YMD='+mealDay;
-  $.ajax({
-    url: apiURL,
-    dataType: 'json',
-    type: 'GET',
-    async: 'false',
-    success: function(resp){
-      console.log(resp);
-      console.log(resp.mealServiceDietInfo[1].row[0]);
-      console.log('학교명 : ' +resp.mealServiceDietInfo[1].row[0].SCHUL_NM);
-      console.log('급식 : ' +resp.mealServiceDietInfo[1].row[0].DDISH_NM);
-      console.log('급식 종류: ' +resp.mealServiceDietInfo[1].row[0].MMEAL_SC_NM);
-      console.log('일시 : ' +resp.mealServiceDietInfo[1].row[0].MLSV_YMD);
-    }
 
-  })
 
-  $('#M-slideUp').on('click', function(){
-    $('.M-navbar-container').toggleClass('M-slideUp');
-    $('.M-iconName').toggleClass('M-slideUp');
-    $('.left-bar').toggleClass('M-rotateL');
-    $('.right-bar').toggleClass('M-rotateR');
-  })
+
   </script>
   
 
   <!-- sideMenu.js 현재 사용하지 않음 -->
+  <script src="../JS/mobileNavbar.js"></script>
   <script src="../JS/sideMenu.js"></script>
   <script src="../JS/login.js"></script>
   <script src="../JS/time.js"></script>
