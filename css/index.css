@@ -536,7 +536,7 @@ div {
     bottom: 0;
     left: 0;
     z-index: 1;
-    transform: translateY(41vh);
+    transform: translateY(40vh);
     transition: all 0.5s;
   }
   .container .M-navbar-container .M-navbar {
