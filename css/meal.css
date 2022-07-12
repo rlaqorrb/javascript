@@ -4,12 +4,12 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 50px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 20px;
 }
 .tab-container .tab .tab-header {
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid black;
+  color: black;
 }
 .tab-container .tab .tab-header .tab-title {
   padding: 20px;
@@ -18,7 +18,7 @@
 .tab-container .tab .tab-header .schNm {
   border: none;
   background: none;
-  color: white;
+  color: black;
   width: 100px;
   font-size: 16px;
   display: inline-block;
@@ -26,8 +26,8 @@
 }
 .tab-container .tab .tab-header .mealScNm {
   display: inline-block;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   padding: 0px 10px;
 }
 .tab-container .tab .tab-header .mealTime {
@@ -38,10 +38,10 @@
   padding: 0px 10px;
   border: none;
   background: none;
-  color: white;
+  color: black;
 }
 .tab-container .tab .tab-header .mealTimeInput::-webkit-calendar-picker-indicator {
-  color: white;
+  color: black;
 }
 .tab-container .tab ul.list {
   list-style-type: none;
@@ -68,14 +68,14 @@
   border-bottom: 2px solid #348EFF;
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  color: white;
+  color: black;
   margin-top: -2px;
 }
 .tab-container .tab .tab-content {
   z-index: 2;
   display: none;
   padding: 10px;
-  color: white;
+  color: black;
   width: 80%;
   margin-right: auto;
   margin-left: auto;

@@ -14,8 +14,12 @@ div {
   font-family: "Basic Font";
   src: url(font/NanumSquareB.woff);
 }
+@font-face {
+  font-family: "Alex";
+  src: url(font/AlexBrush-Regular.ttf);
+}
 .container {
-  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  color: black;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -66,7 +70,6 @@ div {
 }
 .container .nav-container {
   /* border-bottom: 1px solid grey; */
-  color: white;
   width: 100vw;
   height: 5vh;
 }
@@ -82,7 +85,7 @@ div {
   align-items: center;
 }
 .container .nav-container .navbar .title {
-  font-family: "Montserrat";
+  font-family: "Alex";
   font-size: 18px;
   font-weight: 900;
 }
@@ -97,12 +100,10 @@ div {
   font-weight: 600;
   /* border: 1px solid black;
   background-color: black; */
-  color: white;
   border-radius: 5px;
 }
 .container .nav-container .navbar .nav-left .sub-menu-btn {
   border: none;
-  color: white;
   background: none;
   font-size: 35px;
   padding: 5px 13px;
@@ -251,7 +252,8 @@ div {
   height: 100%;
 }
 .container .contents .header .header-content .header-title {
-  color: white;
+  font-family: "Alex";
+  font-size: 45px;
   position: absolute;
   top: 15%;
   left: 50%;
@@ -259,7 +261,6 @@ div {
 }
 .container .contents .header .header-content .header-subtitle {
   text-align: center;
-  color: white;
   position: absolute;
   top: 55%;
   left: 50%;
@@ -271,7 +272,6 @@ div {
 }
 .container .weather-container .weather {
   /* background-image: linear-gradient(to right bottom, #5599ff, #2e81ff, #0068fd, #004bf6, #1225eb); */
-  color: white;
   width: 50%;
   padding: 20px 5px;
   border-radius: 10px;
@@ -306,10 +306,6 @@ div {
 .container .weather-container .weather .w-search {
   border: none;
   background: none;
-  color: white;
-}
-.container .weather-container .weather .w-search::-webkit-input-placeholder {
-  color: white;
 }
 .container .weather-container .weather .weather-bottom {
   display: flex;
@@ -404,7 +400,6 @@ div {
 
 @media screen and (max-width: 600px) {
   .container {
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -673,7 +668,6 @@ div {
   .container .weather-container .weather .weather-bottom p i {
     font-size: 24px;
   }
-
   .contents-container {
     width: 100vw;
     height: 40vh;
@@ -742,7 +736,6 @@ div {
     background-size: cover;
     background-repeat: no-repeat;
   }
-
   .show {
     visibility: visible !important;
     opacity: 1 !important;
